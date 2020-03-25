@@ -1,0 +1,9 @@
+name: UUIDCheck
+main: name.UUIDCheck.UUIDCheck
+version: "1.0.0"
+api:
+  - 1.0.0
+load: POSTWORLD
+author: lt_name
+loadbefore:
+  - AutoUpData

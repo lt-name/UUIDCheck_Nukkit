@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="EconomyAPI_v2.0.1a">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../NukkitX/EconomyAPI_v2.0.1a.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
