@@ -7,3 +7,13 @@ load: POSTWORLD
 author: lt_name
 loadbefore:
   - AutoUpData
+
+commands:
+  ucheck:
+    description: ucheck
+    usage: /uuidcheck
+    permission: uuidcheck.op
+permissions:
+  uuidcheck.op:
+    description: ""
+    default: op
