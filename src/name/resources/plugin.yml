@@ -1,5 +1,5 @@
 name: UUIDCheck
-main: name.UUIDCheck.UUIDCheck
+main: name.uuidcheck.UUIDCheck
 version: "1.0.0"
 api:
   - 1.0.0

@@ -1,8 +1,8 @@
-package name.UUIDCheck.Tasks;
+package name.uuidcheck.tasks;
 
 import cn.nukkit.Player;
 import cn.nukkit.scheduler.PluginTask;
-import name.UUIDCheck.UUIDCheck;
+import name.uuidcheck.UUIDCheck;
 
 public class UUIDCheckTask extends PluginTask<UUIDCheck> {
 
@@ -15,12 +15,12 @@ public class UUIDCheckTask extends PluginTask<UUIDCheck> {
         for (Player player : owner.getServer().getOnlinePlayers().values()) {
             if (owner.getPlayers().containsKey(player.getName())) {
                 if (!owner.getPlayers().get(player.getName()).equals(player.getUniqueId().toString())) {
-                    player.kick("§cUUID校验失败！请联系管理！");
+                    player.kick(owner.getConfig().getString("踢出提示信息", "§cUUID校验失败！请联系管理！"));
                 }
             }else {
                 owner.getPlayers().put(player.getName(), player.getUniqueId().toString());
-                owner.getConfig().set("Player", owner.getPlayers());
-                owner.getConfig().save();
+                owner.getPlayer().set("Player", owner.getPlayers());
+                owner.getPlayer().save();
             }
         }
     }
