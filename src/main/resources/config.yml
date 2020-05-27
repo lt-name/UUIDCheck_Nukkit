@@ -1,0 +1,9 @@
+使用异步task检测: true
+异步检测间隔: 100
+踢出提示信息: "§cUUID校验失败！请联系管理！"
+MySQL:
+  host: "127.0.0.1"
+  port: 3306
+  user: "root"
+  passWorld: "root"
+  table: "root"
