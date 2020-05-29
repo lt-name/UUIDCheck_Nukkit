@@ -18,11 +18,19 @@ public class UUIDCheckTask extends PluginTask<UUIDCheck> {
         use = true;
         for (Player player : owner.getServer().getOnlinePlayers().values()) {
             String uuid = player.getUniqueId().toString();
-            Object object = owner.getSqlManager().getColumnValue(owner.getSqlManager().getConnection(),
-                    "uuid", owner.titleName, "player", "'" + player.getName() + "'");
-            if (object != null) {
-                if (!object.equals(uuid)) {
+            if (owner.dataCache.containsKey(player.getName())) {
+                if (!owner.dataCache.get(player.getName()).equals(uuid)) {
                     player.kick(owner.getConfig().getString("踢出提示信息", "§cUUID校验失败！请联系管理！"));
+                }
+            }else if (owner.useMySQL) {
+                Object object = owner.getSqlManager().getColumnValue(owner.getSqlManager().getConnection(),
+                        "uuid", owner.titleName, "player", "'" + player.getName() + "'");
+                if (object != null) {
+                    if (object.equals(uuid)) {
+                        owner.dataCache.put(player.getName(), (String) object);
+                    }else {
+                        player.kick(owner.getConfig().getString("踢出提示信息", "§cUUID校验失败！请联系管理！"));
+                    }
                 }
             }
         }
