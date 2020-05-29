@@ -1,12 +1,13 @@
 name: UUIDCheck
-main: name.uuidcheck.UUIDCheck
-version: "1.0.0"
+main: cn.lanink.uuidcheck.UUIDCheck
+version: "1.0.2-SNAPSHOT"
 api:
   - 1.0.0
 load: POSTWORLD
 author: lt_name
-loadbefore:
-  - AutoUpData
+depend:
+  - "EasySQL"
+  - "DbLib"
 
 commands:
   ucheck:
